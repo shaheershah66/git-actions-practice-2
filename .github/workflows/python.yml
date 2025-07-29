@@ -11,13 +11,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Login to HashiCorp vault
+      - name: Login to HashiCorp vault and fetch secrets
+        id: vault                
         uses: hashicorp/vault-action@v2
         with:
-          url: ${{secrets.VAULT_ADDRESS}}
+          url: ${{ secrets.VAULT_ADDRESS }}
           token: ${{ secrets.VAULT_TOKEN }}
           method: token
-          secrets: admin/kv/data/test/github-actions email
+          # secrets: |
+          #   admin/kv/data/test/github-actions email
 
-      - name: Mask and print keys (safe logging)
+      - name: Print key
         run: echo "Fetched email = ${{ steps.vault.outputs.email }}"
