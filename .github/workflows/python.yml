@@ -17,9 +17,8 @@ jobs:
         with:
           url: ${{ secrets.VAULT_ADDRESS }}
           token: ${{ secrets.VAULT_TOKEN }}
-          method: token
           secrets: |
-            admin/kv/data/test/github-actions email
+            /v1/admin/secret/data/sample-secret first-secret
 
       - name: Print key
-        run: echo "Fetched email = ${{ steps.vault.outputs.email }}"
+        run: echo "Fetched email = ${{ steps.vault.outputs.first-secret }}"
