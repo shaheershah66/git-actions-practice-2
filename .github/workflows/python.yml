@@ -21,4 +21,4 @@ jobs:
             secret/data/sample-secret first-secret=first_secret
 
       - name: Print key
-        run: echo "Fetched email = ${{ steps.vault.outputs.first-secret }}"
+        run: echo "Fetched email = ${{ steps.vault.outputs.first_secret }}"
