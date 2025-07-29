@@ -18,7 +18,7 @@ jobs:
           url: ${{ secrets.VAULT_ADDRESS }}
           token: ${{ secrets.VAULT_TOKEN }}
           secrets: |
-            /v1/admin/secret/data/sample-secret first-secret
+            secret/data/sample-secret first-secret
 
       - name: Print key
         run: echo "Fetched email = ${{ steps.vault.outputs.first-secret }}"
