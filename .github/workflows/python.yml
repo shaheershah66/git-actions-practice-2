@@ -18,8 +18,8 @@ jobs:
           token: ${{ secrets.VAULT_TOKEN }}
           method: token
           secrets: |
-            admin/kv/data/test/github-actions email
-            admin/kv/data/test/github-actions password
+            Secrets/kv/test/github-actions email
+            Secrets/kv/test/github-actions password
 
       - name: Mask and print keys (safe logging)
         run: |
