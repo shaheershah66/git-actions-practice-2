@@ -17,10 +17,6 @@ jobs:
           url: ${{secrets.VAULT_ADDRESS}}
           token: ${{ secrets.VAULT_TOKEN }}
           method: token
-          secrets: |
-            secrets: |
-              /kv/data/test/github-actions email
-            
       - name: Mask and print keys (safe logging)
         run: |
           echo "::add-mask::${{ steps.vault.outputs.email }}"
