@@ -19,6 +19,4 @@ jobs:
           method: token
           secrets: /v1/admin/kv/data/test/github-actions email
       - name: Mask and print keys (safe logging)
-        run: |
-          echo "::add-mask::${{ steps.vault.outputs.email }}"
-          echo "Fetched email: ${{ steps.vault.outputs.email }}"
+        run: echo "Fetched email = ${{ steps.vault.outputs.email }}"
