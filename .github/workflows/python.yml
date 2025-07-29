@@ -15,7 +15,7 @@ jobs:
         id: vault                
         uses: hashicorp/vault-action@v2
         with:
-          url: ${{ secrets.VAULT_ADDRESS }}
+          url: ${{ vars.VAULT_URL }}
           token: ${{ secrets.VAULT_TOKEN }}
           secrets: |
             kv/data/test/github-actions email
