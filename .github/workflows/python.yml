@@ -19,7 +19,7 @@ jobs:
           method: token
           secrets: |
             secrets: |
-              kv/data/test/github-actions email
+              /kv/data/test/github-actions email
             
       - name: Mask and print keys (safe logging)
         run: |
