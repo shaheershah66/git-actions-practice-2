@@ -14,5 +14,6 @@ jobs:
       - name: Login to HashiCorp vault
         uses: hashicorp/vault-action@v2
         with:
-          url: https://sample-cluster-public-vault-0e77d40b.04625e51.z1.hashicorp.cloud:8200
+          url: ${{secrets.VAULT_ADDRESS}}
           token: ${{ secrets.VAULT_TOKEN }}
+          method: token
